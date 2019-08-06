@@ -31,6 +31,10 @@
 -->
 
 <module name="Checker">
+    <module name="SuppressionFilter">
+        <property name="file" value="suppressions.xml"/>
+        <property name="optional" value="true"/>
+    </module>
     <!--
         If you set the basedir property below, then all reported file
         names will be relative to the specified directory. See
@@ -40,6 +44,7 @@
     -->
 
     <property name="fileExtensions" value="java, properties, xml"/>
+    <property name="severity" value="warning"/>
 
     <!-- Excludes all 'module-info.java' files              -->
     <!-- See https://checkstyle.org/config_filefilters.html -->
@@ -132,15 +137,7 @@
         <module name="MethodParamPad"/>
         <module name="NoWhitespaceAfter"/>
         <module name="NoWhitespaceBefore"/>
-        <module name="OperatorWrap">
-            <property name="tokens" value="EQUAL, NOT_EQUAL, DIV, PLUS, MINUS, STAR, MOD, SR, BSR, GE, GT, SL, LE, LT, BXOR, BOR, LOR, BAND, LAND, TYPE_EXTENSION_AND, LITERAL_INSTANCEOF"/>
-            <property name="option" value="nl"/>
-        </module>
-        <module name="OperatorWrap">
-            <property name="id" value="OperatorWrapTernaryOperator"/>
-            <property name="tokens" value="QUESTION, COLON"/>
-            <property name="option" value="eol"/>
-        </module>
+        <module name="OperatorWrap"/>
         <module name="ParenPad"/>
         <module name="TypecastParenPad"/>
         <module name="WhitespaceAfter"/>
